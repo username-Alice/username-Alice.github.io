@@ -43,32 +43,45 @@
             <div class="hill"></div>
         </div>
         <p id="day-counter">Days Passed: <span id="days">0</span></p>
-        <p>&copy; 2024 My Shelf | <a href="https://github.com/username" target="_blank">GitHub Profile</a></p>
+        <p>&copy; 2024 My Shelf | <a href="https://github.com/username-Alice" target="_blank">GitHub Profile</a></p>
     </footer>
 
     <script>
-        const startDate = new Date('2020-09-01');
+        const startDate = new Date('2024-09-01'); // Change to your start date
         const today = new Date();
         const daysPassed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerText = daysPassed;
 
-        const milestone = 100; // Set milestone at 100 days
+        const milestone = 100; // Set milestone
         const flag = document.querySelector('.flag');
         const clown = document.querySelector('.clown');
-        
-        // Determine flag position
-        const flagPosition = (daysPassed % milestone) / milestone * 100; // Percentage of the milestone
-        flag.style.left = `${flagPosition}%`;
 
-        // Show clown when flag reaches the girl (after milestone)
-        if (daysPassed >= milestone) {
-            setTimeout(() => {
-                clown.style.display = 'block'; // Show clown after milestone
-            }, 2000); // Delay for effect
+        function moveFlag() {
+            // Determine current milestone index
+            const currentMilestoneIndex = Math.floor(daysPassed / milestone);
+            const distanceToMilestone = daysPassed % milestone;
+
+            // Move flag towards girl
+            if (distanceToMilestone < milestone) {
+                const flagPosition = (distanceToMilestone / milestone) * 100; // Percentage of the current milestone
+                flag.style.left = `${flagPosition + 10}%`; // Offset for girl position
+                clown.style.display = 'none'; // Ensure clown is hidden
+            } 
+            
+            // Clown appears when milestone is reached
+            if (distanceToMilestone === 0 && daysPassed > 0) {
+                flag.style.left = `10%`; // Align to girl when milestone is reached
+                clown.style.display = 'block'; // Show clown
+            }
+
+            // Move flag away after reaching the girl
+            if (distanceToMilestone >= milestone) {
+                const moveAway = (distanceToMilestone / milestone) * 100; // Move away after milestone
+                flag.style.left = `${10 + moveAway}%`;
+            }
         }
 
-        // Initialize clown visibility
-        clown.style.display = 'none'; // Hide clown initially
+        moveFlag();
     </script>
 </body>
 </html>
