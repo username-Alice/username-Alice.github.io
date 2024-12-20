@@ -82,6 +82,20 @@ footer {
     width: 50px; /* Adjust size */
 }
 
+.flag {
+    position: absolute;
+    bottom: 60px; /* Align with the girl */
+    width: 30px; /* Adjust size */
+    transition: left 2s; /* Smooth movement */
+}
+
+.clown {
+    position: absolute;
+    bottom: 60px; /* Align with the girl */
+    width: 50px; /* Adjust size */
+    display: none; /* Hidden initially */
+}
+
 .hill {
     width: 100%;
     height: 20px;
