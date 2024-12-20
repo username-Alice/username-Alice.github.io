@@ -47,7 +47,7 @@
     </footer>
 
     <script>
-        const startDate = new Date('2023-01-01'); // Change to your start date
+        const startDate = new Date('2020-09-01');
         const today = new Date();
         const daysPassed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerText = daysPassed;
@@ -57,7 +57,7 @@
         const clown = document.querySelector('.clown');
         
         // Determine flag position
-        const flagPosition = (daysPassed / milestone) * 100; // Percentage of the milestone
+        const flagPosition = (daysPassed % milestone) / milestone * 100; // Percentage of the milestone
         flag.style.left = `${flagPosition}%`;
 
         // Show clown when flag reaches the girl (after milestone)
