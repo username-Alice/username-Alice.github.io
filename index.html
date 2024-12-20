@@ -30,7 +30,32 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Alice Wong</p>
+        <div class="girl-walking">
+            <img src="https://via.placeholder.com/50" alt="Girl walking" class="girl" />
+            <div class="hill"></div>
+        </div>
+        <p id="day-counter">Days Passed: <span id="days">0</span></p>
+        <p>&copy; 2024 My Shelf | <a href="https://github.com/username" target="_blank">GitHub Profile</a></p>
     </footer>
+
+    <script>
+        const startDate = new Date('2023-01-01'); // Change to your start date
+        const today = new Date();
+        const daysPassed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerText = daysPassed;
+
+        // Simple animation for the girl walking
+        let position = 0;
+        const girl = document.querySelector('.girl');
+        function walk() {
+            position += 1;
+            if (position > window.innerWidth) {
+                position = -50; // Start again
+            }
+            girl.style.transform = `translateX(${position}px)`;
+            requestAnimationFrame(walk);
+        }
+        walk();
+    </script>
 </body>
 </html>
