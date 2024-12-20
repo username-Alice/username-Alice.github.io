@@ -78,6 +78,7 @@ footer {
 
 .girl {
     position: absolute;
+    left: 10%; /* Position girl at 10% of screen width */
     bottom: 60px; /* Adjust as needed */
     width: 50px; /* Adjust size */
 }
