@@ -99,11 +99,11 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('pixelartbackground.png');
+  background-image: url('pixelartbackground-resize.png');
   background-size: cover; /* Cover the entire area */
   background-position: center; /* Center the image */
   z-index: -1; /* Behind the content */
-  opacity: 0.5; /* Adjust for visibility */
+  opacity: 0.8; /* Adjust for visibility */
   pointer-events: none; /* Prevent clicks on the background */
 }
 
