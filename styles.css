@@ -108,7 +108,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/assets/images/background.jpg'); /* Background image */
+  background-image: url('pixelartbackground.jpg');
   background-size: cover; /* Cover the entire area */
   background-position: center; /* Center the image */
   z-index: -1; /* Behind the content */
