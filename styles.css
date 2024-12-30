@@ -101,4 +101,18 @@ footer {
     width: 50px; /* Adjust size */
     display: none; /* Hidden initially */
 }
+.background{
+  content: '';
+  position: fixed; /* Fixed position to cover the whole window */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/images/background.jpg'); /* Background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  z-index: -1; /* Behind the content */
+  opacity: 0.5; /* Adjust for visibility */
+  pointer-events: none; /* Prevent clicks on the background */
+}
 
